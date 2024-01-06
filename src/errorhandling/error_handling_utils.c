@@ -6,11 +6,11 @@
 /*   By: ismaelmehdid <ismaelmehdid@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 22:58:08 by ismaelmehdi       #+#    #+#             */
-/*   Updated: 2024/01/05 23:01:11 by ismaelmehdi      ###   ########.fr       */
+/*   Updated: 2024/01/06 21:41:53 by ismaelmehdi      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 int	ft_strcmp_custom(const char *s1, const char *s2)
 {
