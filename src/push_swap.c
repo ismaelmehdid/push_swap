@@ -6,17 +6,18 @@
 /*   By: ismaelmehdid <ismaelmehdid@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 18:19:18 by ismaelmehdi       #+#    #+#             */
-/*   Updated: 2024/01/06 23:27:59 by ismaelmehdi      ###   ########.fr       */
+/*   Updated: 2024/01/07 19:02:18 by ismaelmehdi      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void list_display(struct s_stack *a)
+static void list_display(struct s_stack *a)
 {
 	if (!a)
 	{
-		printf("la liste est vide :((");
+		printf("la liste est vide :(\n");
+		return ;
 	}
 	while (a)
 	{
@@ -29,10 +30,10 @@ void list_display(struct s_stack *a)
 int	main(int argc, char **argv)
 {
 	t_stack	*a;
-	//t_stack *b;
+	t_stack *b;
 
 	a = NULL;
-	//b = NULL;
+	b = NULL;
 	if (argc <= 1)
 		return (0);
 	if (!check_all_str(argc, argv))
@@ -42,8 +43,14 @@ int	main(int argc, char **argv)
 	}
 	init_stack(&a, argc, argv);
 	list_display(a);
-	/*Init list list_init(struct s_list stack_a)*/
-	/*Check if the stack a is sorted*/
+	printf("\n");
+	printf("\n");
+	printf("\n");
+	printf("\n");
+	rra(a);
+	list_display(a);
+	if (list_is_sorted(a))
+		return (0);
 	/*Sort list list_sort(struct s_list stack_a, struct s_list stack_b)*/
 	return (0);
 }
