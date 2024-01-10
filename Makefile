@@ -6,7 +6,7 @@
 #    By: ismaelmehdid <ismaelmehdid@student.42.f    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/06 21:22:51 by ismaelmehdi       #+#    #+#              #
-#    Updated: 2024/01/06 21:40:24 by ismaelmehdi      ###   ########.fr        #
+#    Updated: 2024/01/10 18:48:49 by ismaelmehdi      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,14 +17,15 @@ SRCS = ${wildcard src/errorhandling/*.c src/instructions/*.c src/sorting/*.c src
 OBJS = ${SRCS:.c=.o}
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -Iincludes
+CFLAGS = -g -Wall -Wextra -Werror -Iincludes
 
 RM = rm -rf
 
 all: ${NAME}
-$NAME: ${OBJS}
+
+$(NAME): ${OBJS}
 		@${MAKE} -C ./libft
-		@${CC} ${FLAGS} ${OBJS} ./libft/libft.a -o ${NAME}
+		@${CC} ${CFLAGS} ${OBJS} ./libft/libft.a -o ${NAME}
 
 clean:
 		@${MAKE} -C ./libft fclean

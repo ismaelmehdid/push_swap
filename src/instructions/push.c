@@ -6,7 +6,7 @@
 /*   By: ismaelmehdid <ismaelmehdid@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 17:47:42 by ismaelmehdi       #+#    #+#             */
-/*   Updated: 2024/01/07 17:34:55 by ismaelmehdi      ###   ########.fr       */
+/*   Updated: 2024/01/10 17:28:28 by ismaelmehdi      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ void	pa(struct s_stack **a, struct s_stack **b)
 		return ;
 	datapoped = pop(b);
 	push(a, datapoped);
+	write (1, "pa\n", 3);
 }
 
 void	pb(struct s_stack **a, struct s_stack **b)
@@ -40,4 +41,5 @@ void	pb(struct s_stack **a, struct s_stack **b)
 		return ;
 	datapoped = pop(a);
 	push(b, datapoped); 
+	write (1, "pb\n", 3);
 }

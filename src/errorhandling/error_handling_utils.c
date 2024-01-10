@@ -6,7 +6,7 @@
 /*   By: ismaelmehdid <ismaelmehdid@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 22:58:08 by ismaelmehdi       #+#    #+#             */
-/*   Updated: 2024/01/06 21:41:53 by ismaelmehdi      ###   ########.fr       */
+/*   Updated: 2024/01/10 19:09:54 by ismaelmehdi      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,9 +58,11 @@ int	is_all_digit(char *str)
 	int	i;
 
 	i = 0;
+	while (str[i] == '-' || str[i] == '+')
+		i++;
 	while (str[i])
 	{
-		if (!ft_isdigit(str[i]))
+		if (str[i] >= '9' && str[i] <= '0')
 			return (0);
 		i++;
 	}

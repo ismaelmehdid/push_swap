@@ -6,13 +6,13 @@
 /*   By: ismaelmehdid <ismaelmehdid@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 17:47:44 by ismaelmehdi       #+#    #+#             */
-/*   Updated: 2024/01/07 19:14:13 by ismaelmehdi      ###   ########.fr       */
+/*   Updated: 2024/01/10 17:24:38 by ismaelmehdi      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	sa(struct s_stack *a)
+void	sa(struct s_stack *a, int checkCalled)
 {
 	int	temp;
 
@@ -22,9 +22,11 @@ void	sa(struct s_stack *a)
 	temp = a->data;
 	a->data = a->next->data;
 	a->next->data = temp;
+	if (checkCalled != 1)
+		write (1, "sa\n", 3);
 }
 
-void	sb(struct s_stack *b)
+void	sb(struct s_stack *b, int checkCalled)
 {
 	int	temp;
 
@@ -34,10 +36,12 @@ void	sb(struct s_stack *b)
 	temp = b->data;
 	b->data = b->next->data;
 	b->next->data = temp;
+	if (checkCalled != 1)
+		write (1, "sb\n", 3);
 }
 
 void	ss(struct s_stack *a, struct s_stack *b)
 {
-	sa(a);
-	sa(b);
+	sa(a, 1);
+	sa(b, 1);
 }
