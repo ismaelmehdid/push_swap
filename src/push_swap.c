@@ -6,25 +6,30 @@
 /*   By: ismaelmehdid <ismaelmehdid@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 18:19:18 by ismaelmehdi       #+#    #+#             */
-/*   Updated: 2024/01/10 19:12:41 by ismaelmehdi      ###   ########.fr       */
+/*   Updated: 2024/01/12 22:53:53 by ismaelmehdi      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void list_display(struct s_stack *a)
+void	freeAllNodes(struct s_stack *a, struct s_stack *b)
 {
-	if (!a)
+	t_stack	*temp;
+
+	temp = a;
+	while (temp)
 	{
-		printf("la liste est vide :(\n");
-		return ;
+		temp = temp->next;
+		free(a);
+		a = temp;
 	}
-	while (a)
+	temp = b;
+	while (temp)
 	{
-		printf("data:%d   target:%d\n", a->data, a->target->data);
-		a = a->next;
+		temp = temp->next;
+		free(b);
+		b = temp;
 	}
-	printf("NULL");
 }
 
 int	main(int argc, char **argv)
@@ -45,11 +50,6 @@ int	main(int argc, char **argv)
 	if (list_is_sorted(a))
 		return (0);
 	sortStack(&a, &b);
-
-	list_display(a);
-	printf("\n");
-
-
-
+	freeAllNodes(a, b);
 	return (0);
 }

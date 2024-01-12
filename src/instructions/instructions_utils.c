@@ -6,7 +6,7 @@
 /*   By: ismaelmehdid <ismaelmehdid@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/07 15:17:18 by ismaelmehdi       #+#    #+#             */
-/*   Updated: 2024/01/10 15:32:20 by ismaelmehdi      ###   ########.fr       */
+/*   Updated: 2024/01/12 18:59:41 by ismaelmehdi      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ int	list_lenght(struct s_stack *stack)
 	int	lenght;
 
 	lenght = 0;
+	if (!stack)
+		return (0);
 	while(stack)
 	{
 		stack = stack->next;
