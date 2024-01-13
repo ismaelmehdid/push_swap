@@ -6,7 +6,7 @@
 /*   By: ismaelmehdid <ismaelmehdid@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 17:57:04 by ismaelmehdi       #+#    #+#             */
-/*   Updated: 2024/01/13 17:27:18 by ismaelmehdi      ###   ########.fr       */
+/*   Updated: 2024/01/13 17:55:18 by ismaelmehdi      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,13 +69,11 @@ struct s_stack	*cheapest_cost(struct s_stack *stack)
 void	mini_sort(struct s_stack **stack)
 {
 	t_stack	*max;
-	t_stack	*temp;
 
-	temp = *stack;
 	max = max_data(*stack);
 	if (!stack)
 		return ;
-	while (temp->next->next != max)
+	while ((*stack)->next->next != max)
 		ra(stack, 0);
 	if (!list_is_sorted(*stack))
 		sa(stack, 0);

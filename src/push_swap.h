@@ -6,7 +6,7 @@
 /*   By: ismaelmehdid <ismaelmehdid@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 18:18:03 by ismaelmehdi       #+#    #+#             */
-/*   Updated: 2024/01/13 17:29:31 by ismaelmehdi      ###   ########.fr       */
+/*   Updated: 2024/01/13 19:43:42 by ismaelmehdi      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,8 @@ int				ft_strcmp_custom(const char *s1, const char *s2);
 int				is_all_digit(char *str);
 int				has_duplicate(int argc, char **argv);
 long			ft_atoi_custom(const char *str);
+char			*ft_strcat(char *src1, char *src2);
+char			**convert_to_darray(int *argc, char **argv);
 
 void			init_stack(struct s_stack **a, int argc, char **argv);
 void			add_to_stack(struct s_stack **a, int temp);

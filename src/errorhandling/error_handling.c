@@ -6,7 +6,7 @@
 /*   By: ismaelmehdid <ismaelmehdid@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 19:51:32 by ismaelmehdi       #+#    #+#             */
-/*   Updated: 2024/01/13 17:11:53 by ismaelmehdi      ###   ########.fr       */
+/*   Updated: 2024/01/13 19:42:19 by ismaelmehdi      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,4 +33,19 @@ int	check_all_str(int argc, char **argv)
 	if (has_duplicate(argc, argv))
 		return (0);
 	return (1);
+}
+
+char	**convert_to_darray(int *argc, char **argv)
+{
+	char	*temp;
+	int		i;
+
+	temp = NULL;
+	i = 0;
+	temp = ft_strcat(argv[0], argv[1]);
+	argv = ft_split(temp, ' ');
+	while (argv[i])
+		i++;
+	*argc = i;
+	return (argv);
 }

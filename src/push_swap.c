@@ -6,7 +6,7 @@
 /*   By: ismaelmehdid <ismaelmehdid@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 18:19:18 by ismaelmehdi       #+#    #+#             */
-/*   Updated: 2024/01/13 17:34:22 by ismaelmehdi      ###   ########.fr       */
+/*   Updated: 2024/01/13 19:45:28 by ismaelmehdi      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ int	main(int argc, char **argv)
 	b = NULL;
 	if (argc <= 1)
 		return (0);
+	if (argc == 2)
+		argv = convert_to_darray(&argc, argv);
 	if (!check_all_str(argc, argv))
 	{
 		write (2, "Error\n", 6);
