@@ -6,23 +6,16 @@
 /*   By: ismaelmehdid <ismaelmehdid@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 17:57:04 by ismaelmehdi       #+#    #+#             */
-/*   Updated: 2024/01/12 21:55:33 by ismaelmehdi      ###   ########.fr       */
+/*   Updated: 2024/01/13 17:27:18 by ismaelmehdi      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	abs(int nbr)
+struct s_stack	*max_data(struct s_stack *stack)
 {
-	if (nbr < 0)
-		return (-nbr);
-	return (nbr);
-}
+	t_stack	*max;
 
-struct s_stack *maxData(struct s_stack *stack)
-{
-	t_stack *max;
-	
 	max = NULL;
 	if (!stack)
 		return (NULL);
@@ -37,7 +30,25 @@ struct s_stack *maxData(struct s_stack *stack)
 	return (max);
 }
 
-struct s_stack	*cheapestCost(struct s_stack *stack)
+struct s_stack	*min_data(struct s_stack *stack)
+{
+	t_stack	*min;
+
+	min = NULL;
+	if (!stack)
+		return (NULL);
+	while (stack)
+	{
+		if (min == NULL)
+			min = stack;
+		if (min->data > stack->data)
+			min = stack;
+		stack = stack->next;
+	}
+	return (min);
+}
+
+struct s_stack	*cheapest_cost(struct s_stack *stack)
 {
 	t_stack	*cheapest;
 
@@ -55,13 +66,13 @@ struct s_stack	*cheapestCost(struct s_stack *stack)
 	return (cheapest);
 }
 
-void	miniSort(struct s_stack **stack)
+void	mini_sort(struct s_stack **stack)
 {
 	t_stack	*max;
 	t_stack	*temp;
 
 	temp = *stack;
-	max = maxData(*stack);
+	max = max_data(*stack);
 	if (!stack)
 		return ;
 	while (temp->next->next != max)
@@ -70,20 +81,27 @@ void	miniSort(struct s_stack **stack)
 		sa(stack, 0);
 }
 
-struct s_stack *minData(struct s_stack *stack)
+void	set_index_and_median(struct s_stack *thestack)
 {
-	t_stack *min;
-	
-	min = NULL;
-	if (!stack)
-		return (NULL);
-	while (stack)
+	int	median;
+	int	index;
+
+	if (!thestack)
+		return ;
+	median = list_lenght(thestack) / 2;
+	index = 0;
+	while (thestack)
 	{
-		if (min == NULL)
-			min = stack;
-		if (min->data > stack->data)
-			min = stack;
-		stack = stack->next;
+		thestack->index = index;
+		if (thestack->index == 0)
+			thestack->prev = NULL;
+		if (thestack->next != NULL)
+			thestack->next->prev = thestack;
+		if (index <= median)
+			thestack->above_median = 1;
+		else
+			thestack->above_median = 0;
+		index++;
+		thestack = thestack->next;
 	}
-	return (min);
 }

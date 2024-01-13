@@ -6,7 +6,7 @@
 /*   By: ismaelmehdid <ismaelmehdid@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 18:40:05 by ismaelmehdi       #+#    #+#             */
-/*   Updated: 2024/01/06 22:05:24 by ismaelmehdi      ###   ########.fr       */
+/*   Updated: 2024/01/13 17:17:45 by ismaelmehdi      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	init_stack(struct s_stack **a, int argc, char **argv)
 
 void	add_to_stack(struct s_stack **a, int temp)
 {
-	t_stack *node;
+	t_stack	*node;
 
 	if (!a)
 		return ;
