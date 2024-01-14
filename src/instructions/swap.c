@@ -6,7 +6,7 @@
 /*   By: ismaelmehdid <ismaelmehdid@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 17:47:44 by ismaelmehdi       #+#    #+#             */
-/*   Updated: 2024/01/13 17:08:47 by ismaelmehdi      ###   ########.fr       */
+/*   Updated: 2024/01/14 18:47:10 by ismaelmehdi      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	sa(struct s_stack **a, int checkCalled)
 {
 	t_stack	*temp;
 
+	if (!a)
+		return ;
 	temp = *a;
 	if (list_lenght(*a) <= 1)
 		return ;
@@ -33,6 +35,8 @@ void	sb(struct s_stack **b, int checkCalled)
 {
 	t_stack	*temp;
 
+	if (!b)
+		return ;
 	temp = *b;
 	if (list_lenght(*b) <= 1)
 		return ;

@@ -6,7 +6,7 @@
 /*   By: ismaelmehdid <ismaelmehdid@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 17:47:42 by ismaelmehdi       #+#    #+#             */
-/*   Updated: 2024/01/13 17:08:28 by ismaelmehdi      ###   ########.fr       */
+/*   Updated: 2024/01/14 18:48:01 by ismaelmehdi      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	pa(struct s_stack **a, struct s_stack **b)
 {
 	int		datapoped;
 
+	if (!b)
+		return ;
 	datapoped = 0;
 	if (list_lenght(*b) == 0)
 		return ;
@@ -28,6 +30,8 @@ void	pb(struct s_stack **a, struct s_stack **b)
 {
 	int		datapoped;
 
+	if (!a)
+		return ;
 	datapoped = 0;
 	if (list_lenght(*a) == 0)
 		return ;

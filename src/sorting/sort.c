@@ -6,7 +6,7 @@
 /*   By: ismaelmehdid <ismaelmehdid@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 15:57:51 by ismaelmehdi       #+#    #+#             */
-/*   Updated: 2024/01/13 17:29:55 by ismaelmehdi      ###   ########.fr       */
+/*   Updated: 2024/01/14 18:49:14 by ismaelmehdi      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	sort_stack(struct s_stack **a, struct s_stack **b)
 {
+	if (!a)
+		return ;
 	transfert_first_two(a, b);
 	while (list_lenght(*a) != 3)
 	{

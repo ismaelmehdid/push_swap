@@ -6,7 +6,7 @@
 /*   By: ismaelmehdid <ismaelmehdid@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 16:54:14 by ismaelmehdi       #+#    #+#             */
-/*   Updated: 2024/01/13 17:30:50 by ismaelmehdi      ###   ########.fr       */
+/*   Updated: 2024/01/14 18:46:04 by ismaelmehdi      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	put_on_top_a(struct s_stack **a, struct s_stack *cheapest)
 {
+	if (!a)
+		return ;
 	while (*a != cheapest)
 	{
 		if (cheapest->above_median)
@@ -26,6 +28,8 @@ void	put_on_top_a(struct s_stack **a, struct s_stack *cheapest)
 
 void	put_on_top_b(struct s_stack **b, struct s_stack *cheapest)
 {
+	if (!b)
+		return ;
 	while (*b != cheapest)
 	{
 		if (cheapest->above_median)
@@ -40,6 +44,8 @@ void	put_min_on_top(struct s_stack **a)
 {
 	t_stack	*min_node;
 
+	if (!a)
+		return ;
 	min_node = min_data(*a);
 	while (*a != min_node)
 	{

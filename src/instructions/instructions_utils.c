@@ -6,7 +6,7 @@
 /*   By: ismaelmehdid <ismaelmehdid@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/07 15:17:18 by ismaelmehdi       #+#    #+#             */
-/*   Updated: 2024/01/13 17:11:03 by ismaelmehdi      ###   ########.fr       */
+/*   Updated: 2024/01/14 18:42:41 by ismaelmehdi      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ int	list_lenght(struct s_stack *stack)
 
 int	list_is_sorted(struct s_stack *stack)
 {
+	if (!stack)
+		return (1);
 	while (stack)
 	{
 		if (!stack->next)
@@ -66,7 +68,7 @@ int	pop(struct s_stack **stack)
 	return (topnode);
 }
 
-void	free_all_nodes(struct s_stack *a, struct s_stack *b)
+void	free_all_nodes(t_stack *a, t_stack *b)
 {
 	t_stack	*temp;
 

@@ -6,7 +6,7 @@
 /*   By: ismaelmehdid <ismaelmehdid@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 16:41:38 by ismaelmehdi       #+#    #+#             */
-/*   Updated: 2024/01/13 17:11:28 by ismaelmehdi      ###   ########.fr       */
+/*   Updated: 2024/01/14 18:47:45 by ismaelmehdi      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	rra(struct s_stack **a, int checkCalled)
 	t_stack	*last;
 	t_stack	*head;
 
+	if (!a)
+		return ;
 	head = *a;
 	last = *a;
 	if (list_lenght(*a) < 2)
@@ -37,6 +39,8 @@ void	rrb(struct s_stack **b, int checkCalled)
 	t_stack	*last;
 	t_stack	*head;
 
+	if (!b)
+		return ;
 	head = *b;
 	last = *b;
 	if (list_lenght(*b) < 2)

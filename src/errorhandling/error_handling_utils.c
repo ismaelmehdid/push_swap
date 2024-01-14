@@ -6,7 +6,7 @@
 /*   By: ismaelmehdid <ismaelmehdid@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 22:58:08 by ismaelmehdi       #+#    #+#             */
-/*   Updated: 2024/01/13 19:55:07 by ismaelmehdi      ###   ########.fr       */
+/*   Updated: 2024/01/14 18:48:44 by ismaelmehdi      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,8 @@ int	is_all_digit(char *str)
 	int	i;
 
 	i = 0;
+	if (!str)
+		return (0);
 	while (str[i] == '-' || str[i] == '+')
 		i++;
 	while (str[i])
@@ -90,27 +92,4 @@ int	has_duplicate(int argc, char **argv)
 		i++;
 	}
 	return (0);
-}
-
-char	*ft_strcat(char *src1, char *src2)
-{
-	int		i;
-	char	*dest;
-	int		lenght;
-	int		j;
-
-	lenght = ft_strlen(src1) + ft_strlen(src2);
-	i = 0;
-	j = 0;
-	dest = malloc(sizeof(char) * lenght + 2);
-	if (!dest)
-		return (NULL);
-	while (src1[i])
-		dest[j++] = src1[i++];
-	dest[j++] = ' ';
-	i = 0;
-	while (src2[i])
-		dest[j++] = src2[i++];
-	dest[j] = '\0';
-	return (dest);
 }

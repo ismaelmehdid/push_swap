@@ -6,7 +6,7 @@
 /*   By: ismaelmehdid <ismaelmehdid@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 16:51:32 by ismaelmehdi       #+#    #+#             */
-/*   Updated: 2024/01/13 17:26:02 by ismaelmehdi      ###   ########.fr       */
+/*   Updated: 2024/01/14 18:46:38 by ismaelmehdi      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	set_target_a(struct s_stack *a, struct s_stack *b)
 	t_stack	*mintarget;
 	t_stack	*currentb;
 
+	if (!a || !b)
+		return ;
 	while (a)
 	{
 		mintarget = NULL;
@@ -41,6 +43,8 @@ void	set_target_b(struct s_stack *a, struct s_stack *b)
 	t_stack	*mintarget;
 	t_stack	*currenta;
 
+	if (!a || !b)
+		return ;
 	while (b)
 	{
 		mintarget = NULL;
@@ -65,6 +69,8 @@ void	set_push_cost_a(struct s_stack *a, struct s_stack *b)
 	int	lenghta;
 	int	lenghtb;
 
+	if (!a || !b)
+		return ;
 	lenghta = list_lenght(a);
 	lenghtb = list_lenght(b);
 	while (a)
@@ -85,6 +91,8 @@ void	set_push_cost_b(struct s_stack *a, struct s_stack *b)
 	int	lenghta;
 	int	lenghtb;
 
+	if (!a || !b)
+		return ;
 	lenghta = list_lenght(a);
 	lenghtb = list_lenght(b);
 	while (b)
@@ -105,6 +113,8 @@ void	transfert_first_two(struct s_stack **a, struct s_stack **b)
 	int	lenght;
 	int	i;
 
+	if (!a)
+		return ;
 	lenght = list_lenght(*a);
 	i = 0;
 	while (i != 2)
