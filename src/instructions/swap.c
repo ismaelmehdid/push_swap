@@ -6,7 +6,7 @@
 /*   By: ismaelmehdid <ismaelmehdid@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 17:47:44 by ismaelmehdi       #+#    #+#             */
-/*   Updated: 2024/01/14 18:47:10 by ismaelmehdi      ###   ########.fr       */
+/*   Updated: 2024/01/14 19:14:32 by ismaelmehdi      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ void	sa(struct s_stack **a, int checkCalled)
 	temp->next = (*a)->next;
 	(*a)->next = temp;
 	temp->prev = *a;
-	temp->next->prev = temp;
+	if (temp->next)
+		temp->next->prev = temp;
 	if (checkCalled != 1)
 		write (1, "sa\n", 3);
 }
@@ -45,7 +46,8 @@ void	sb(struct s_stack **b, int checkCalled)
 	temp->next = (*b)->next;
 	(*b)->next = temp;
 	temp->prev = *b;
-	temp->next->prev = temp;
+	if (temp->next)
+		temp->next->prev = temp;
 	if (checkCalled != 1)
 		write (1, "sb\n", 3);
 }
