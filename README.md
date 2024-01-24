@@ -10,7 +10,7 @@
 
 ### Requirements
 
-The project is written in the C language and requires the **`gcc` compiler** and the standard **C libraries** to run.
+The project is written in the C language and requires the **`gcc` compiler** to run.
 
 ### Instructions
 
@@ -22,10 +22,9 @@ To compile, go to the project folder and run :
 $ make
 ```
 
-**2. Using it**
-
-To use push_swap :
+**2. Using push_swap**
 
 ```shell
 ./push_swap nb1 nb2 nb3 nb4 ...
 ```
+"nb1 nb2 nb3 nb4 ..." is corresponding to your **non sorted** list of **integers**.
