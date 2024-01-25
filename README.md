@@ -4,7 +4,7 @@
 
 ## 💡 About the project
 
-> This project is sorting algorithm using 2 stacks only (A and B).
+> This project is a sorting algorithm using 2 stacks only (A and B).
 
 ## 🛠️ Usage
 
