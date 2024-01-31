@@ -6,22 +6,26 @@
 /*   By: ismaelmehdid <ismaelmehdid@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 18:40:05 by ismaelmehdi       #+#    #+#             */
-/*   Updated: 2024/01/14 18:59:48 by ismaelmehdi      ###   ########.fr       */
+/*   Updated: 2024/01/31 18:10:42 by ismaelmehdi      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	init_stack(struct s_stack **a, int argc, char **argv)
+void	init_stack(struct s_stack **a, char **list)
 {
 	int	temp;
+	int	length;
 
 	temp = 0;
-	while (argc > 1)
+	length = 0;
+	while (list[length])
+		length++;
+	while (length - 1 >= 0)
 	{
-		temp = ft_atoi_custom(argv[argc - 1]);
+		temp = ft_atoi_custom(list[length - 1]);
 		add_to_stack(a, temp);
-		argc--;
+		length--;
 	}
 }
 

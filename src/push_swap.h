@@ -6,7 +6,7 @@
 /*   By: ismaelmehdid <ismaelmehdid@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 18:18:03 by ismaelmehdi       #+#    #+#             */
-/*   Updated: 2024/01/14 18:30:17 by ismaelmehdi      ###   ########.fr       */
+/*   Updated: 2024/01/31 18:25:24 by ismaelmehdi      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,13 +31,13 @@ typedef struct s_stack{
 	struct s_stack	*prev;
 }t_stack;
 
-int				check_all_str(int argc, char **argv);
+int				check_all_str(char **list);
 int				ft_strcmp_custom(const char *s1, const char *s2);
 int				is_all_digit(char *str);
-int				has_duplicate(int argc, char **argv);
+int				has_duplicate(char **list);
 long			ft_atoi_custom(const char *str);
 
-void			init_stack(struct s_stack **a, int argc, char **argv);
+void			init_stack(struct s_stack **a, char **list);
 void			add_to_stack(struct s_stack **a, int temp);
 
 void			sa(struct s_stack **a, int checkCalled);
@@ -74,6 +74,9 @@ int				list_is_sorted(struct s_stack *stack);
 void			set_index_and_median(struct s_stack *thestack);
 struct s_stack	*max_data(struct s_stack *stack);
 struct s_stack	*min_data(struct s_stack *stack);
-void			free_all_nodes(struct s_stack *a, struct s_stack *b);
+void			free_all_nodes(t_stack *a, t_stack *b);
+void			program_exit(t_stack *a, t_stack *b, char **list, int code);
+char			**convert_list(char *list);
+void			free_double_array(char **array);
 
 #endif

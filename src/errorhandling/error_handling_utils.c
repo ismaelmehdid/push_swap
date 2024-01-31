@@ -6,7 +6,7 @@
 /*   By: ismaelmehdid <ismaelmehdid@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 22:58:08 by ismaelmehdi       #+#    #+#             */
-/*   Updated: 2024/01/14 18:48:44 by ismaelmehdi      ###   ########.fr       */
+/*   Updated: 2024/01/31 17:35:51 by ismaelmehdi      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,21 +71,23 @@ int	is_all_digit(char *str)
 	return (1);
 }
 
-int	has_duplicate(int argc, char **argv)
+int	has_duplicate(char **list)
 {
 	int	i;
 	int	j;
+	int	length;
 
-	i = 1;
+	i = 0;
 	j = 0;
-	if (argc == 2)
-		return (0);
-	while (i < argc - 1)
+	length = 0;
+	while (list[length])
+		length++;
+	while (i < length - 1)
 	{
 		j = i + 1;
-		while (j < argc)
+		while (j < length)
 		{
-			if (ft_strcmp_custom(argv[i], argv[j]) == 0)
+			if (ft_strcmp_custom(list[i], list[j]) == 0)
 				return (1);
 			j++;
 		}

@@ -6,25 +6,33 @@
 /*   By: ismaelmehdid <ismaelmehdid@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 19:51:32 by ismaelmehdi       #+#    #+#             */
-/*   Updated: 2024/01/14 18:29:35 by ismaelmehdi      ###   ########.fr       */
+/*   Updated: 2024/01/31 17:36:14 by ismaelmehdi      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	check_all_str(int argc, char **argv)
+char	**convert_list(char *list)
+{
+	char	**newlist;
+
+	newlist = ft_split(list, ' ');
+	return (newlist);
+}
+
+int	check_all_str(char **list)
 {
 	int	j;
 
-	j = 1;
-	while (j != argc)
+	j = 0;
+	while (list[j])
 	{
-		if (!is_all_digit(argv[j]) || ft_atoi_custom(argv[j]) > INT_MAX
-			|| ft_atoi_custom(argv[j]) < INT_MIN || ft_strlen(argv[j]) == 0)
+		if (!is_all_digit(list[j]) || ft_atoi_custom(list[j]) > INT_MAX
+			|| ft_atoi_custom(list[j]) < INT_MIN || ft_strlen(list[j]) == 0)
 			return (0);
 		j++;
 	}
-	if (has_duplicate(argc, argv))
+	if (has_duplicate(list))
 		return (0);
 	return (1);
 }

@@ -6,7 +6,7 @@
 /*   By: ismaelmehdid <ismaelmehdid@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/07 15:17:18 by ismaelmehdi       #+#    #+#             */
-/*   Updated: 2024/01/14 18:42:41 by ismaelmehdi      ###   ########.fr       */
+/*   Updated: 2024/01/31 17:01:11 by ismaelmehdi      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,24 +66,4 @@ int	pop(struct s_stack **stack)
 	*stack = top->next;
 	free (top);
 	return (topnode);
-}
-
-void	free_all_nodes(t_stack *a, t_stack *b)
-{
-	t_stack	*temp;
-
-	temp = a;
-	while (temp)
-	{
-		temp = temp->next;
-		free(a);
-		a = temp;
-	}
-	temp = b;
-	while (temp)
-	{
-		temp = temp->next;
-		free(b);
-		b = temp;
-	}
 }

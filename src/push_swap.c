@@ -6,7 +6,7 @@
 /*   By: ismaelmehdid <ismaelmehdid@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 18:19:18 by ismaelmehdi       #+#    #+#             */
-/*   Updated: 2024/01/14 19:01:44 by ismaelmehdi      ###   ########.fr       */
+/*   Updated: 2024/01/31 18:13:18 by ismaelmehdi      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,23 +16,21 @@ int	main(int argc, char **argv)
 {
 	t_stack	*a;
 	t_stack	*b;
+	char	**list;
 
 	a = NULL;
 	b = NULL;
-	if (argc <= 1)
+	if (argc != 2)
 		return (0);
-	if (!check_all_str(argc, argv))
-	{
-		write (2, "Error\n", 6);
-		exit(EXIT_FAILURE);
-	}
-	init_stack(&a, argc, argv);
+	list = convert_list(argv[1]);
+	if (!list)
+		return (0);
+	if (!check_all_str(list))
+		program_exit(a, b, list, 1);
+	init_stack(&a, list);
 	if (list_is_sorted(a))
-	{
-		free_all_nodes(a, b);
-		return (0);
-	}
+		program_exit(a, b, list, 0);
 	sort_stack(&a, &b);
-	free_all_nodes(a, b);
+	program_exit(a, b, list, 0);
 	return (0);
 }

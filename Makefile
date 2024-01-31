@@ -32,10 +32,7 @@ clean:
 		@${RM} ${OBJS}
 
 fclean: clean
-		@${RM} ${OBJS}
-
-fclean: clean
-		@${RM} ${NAME}
+		@${RM} ${OBJS} ${NAME}
 
 re: fclean all
 
