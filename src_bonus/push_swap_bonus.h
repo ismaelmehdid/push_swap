@@ -6,7 +6,7 @@
 /*   By: ismaelmehdid <ismaelmehdid@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 18:18:03 by ismaelmehdi       #+#    #+#             */
-/*   Updated: 2024/02/02 21:58:35 by ismaelmehdi      ###   ########.fr       */
+/*   Updated: 2024/02/02 23:44:15 by ismaelmehdi      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 # define INT_MIN -2147483647
 
 # include "../libft/libft.h"
-# include "../get_next_line/get_next_line.h"
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdbool.h>

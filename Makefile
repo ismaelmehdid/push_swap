@@ -6,7 +6,7 @@
 #    By: ismaelmehdid <ismaelmehdid@student.42.f    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/06 21:22:51 by ismaelmehdi       #+#    #+#              #
-#    Updated: 2024/02/02 15:47:27 by ismaelmehdi      ###   ########.fr        #
+#    Updated: 2024/02/02 23:44:27 by ismaelmehdi      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,8 +17,7 @@ SRCS = ${wildcard src/errorhandling/*.c src/instructions/*.c src/sorting/*.c src
 SRCS_BONUS = ${wildcard src_bonus/errorhandling_bonus/*.c \
 						src_bonus/instructions_bonus/*.c \
 						src_bonus/check_instructions_bonus/*.c \
-						src_bonus/*.c \
-						get_next_line/*.c}
+						src_bonus/*.c}
 
 OBJS = ${SRCS:.c=.o}
 OBJS_BONUS = ${SRCS_BONUS:.c=.o}
